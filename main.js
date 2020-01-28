@@ -98,7 +98,7 @@ function mineBlock(nbPageStart, data) {
   let nowBlock = [];
   nbPageStart = nbPageStart - 1;
   // let T = 30 * Math.random(0, 1)
-  let nbPageFin = nbPageStart + 4;
+  let nbPageFin = nbPageStart + 5;
   if (nbPageFin > 707) {
     nbPageFin = 708;
     nbPageFin = nbPageFin - nbPageStart;
@@ -108,6 +108,7 @@ function mineBlock(nbPageStart, data) {
     .createHmac("sha256", "bVwDy-R4CyM-VdPnW-pV2Fc-88F9M")
     .update(encript.toString())
     .digest("hex");
+  console.log(nbPageFin);
   let firstRegistration = data.toRead.pageArray[nbPageStart].content;
   let secondRegistration =
     nbPageFin > 1 ? data.toRead.pageArray[nbPageStart + 1].content : "";
