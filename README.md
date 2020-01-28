@@ -19,3 +19,6 @@ Puis lancer le serveur node :
 > node main.js
 
 Il faut lancer les 2 serveurs.
+
+Aller sur le front du projet pour tester le site web.
+https://github.com/louloulfx/Front_Pitch_Block_Chain
