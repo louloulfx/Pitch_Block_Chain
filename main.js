@@ -14,11 +14,17 @@ app.get("/latestblock", (req, res) => {
       err,
       rows
     ) {
-      res.send(rows);
+      res.status(200).send(rows);
     });
   });
 });
-app.get("/actualchain", (req, res) => {});
+app.get("/actualchain", (req, res) => {
+  db.serialize(function() {
+    db.all("SELECT * FROM blocks", function(err, rows) {
+      res.status(200).send(rows);
+    });
+  });
+});
 app.post("/broadcastblock", (req, res) => {});
 
 let toRead = new Promise((resolve, reject) => {
