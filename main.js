@@ -36,7 +36,6 @@ let toRead = new Promise((resolve, reject) => {
     resolve({ toRead: JSON.parse(data) });
   });
 });
-
 function getLatest() {
   lastReceived = {};
   for (let i = 3000; i < 3005; i++) {
