@@ -1,0 +1,26 @@
+{
+  "name": "pitch_block_chain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louloulfx/Pitch_Block_Chain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louloulfx/Pitch_Block_Chain/issues"
+  },
+  "homepage": "https://github.com/louloulfx/Pitch_Block_Chain#readme"
+}
