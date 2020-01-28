@@ -8,9 +8,18 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send(200, "hello");
+app.get("/latestblock", (req, res) => {
+  db.serialize(function() {
+    db.all("SELECT * FROM blocks ORDER BY idBlock DESC LIMIT 1", function(
+      err,
+      rows
+    ) {
+      res.send(rows);
+    });
+  });
 });
+app.get("/actualchain", (req, res) => {});
+app.post("/broadcastblock", (req, res) => {});
 
 let toRead = new Promise((resolve, reject) => {
   fs.readFile("./allPages.json", (err, data) => {
@@ -71,8 +80,6 @@ toRead.then(data => {
       console.log(row);
     });
   });
-
-  db.close();
 });
 
 app.listen(port);
