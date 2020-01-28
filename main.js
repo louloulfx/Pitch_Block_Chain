@@ -5,10 +5,12 @@ const fs = require("fs");
 const express = require("express");
 const fetch = require("node-fetch");
 const bodyParser = require("body-parser");
+const Cors = require("cors");
 
 const app = express();
 const port = 3000;
 let lastReceived = {};
+app.use(Cors());
 
 app.get("/latestblock", (req, res) => {
   db.serialize(function() {
